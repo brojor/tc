@@ -1,0 +1,36 @@
+{
+  "name": "tc",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.7.1",
+  "description": "A lightweight CLI tool for counting tokens in text files or stdin using Anthropic's Claude models. Inspired by the Unix wc command, but for tokens.",
+  "author": "BroJor",
+  "license": "ISC",
+  "keywords": [
+    "cli",
+    "token",
+    "count",
+    "anthropic",
+    "claude"
+  ],
+  "main": "dist/index.js",
+  "bin": {
+    "tc": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "commander": "^13.1.0",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.12.0",
+    "@types/node": "^22.14.1",
+    "eslint": "^9.24.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
