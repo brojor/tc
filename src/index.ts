@@ -47,6 +47,11 @@ async function readInput(file?: string): Promise<string> {
     return fs.promises.readFile(file, 'utf-8')
   }
 
+  if (process.stdin.isTTY) {
+    process.stderr.write('No input provided. Use --file or pipe data to stdin.\n')
+    process.exit(1)
+  }
+
   return new Promise((resolve, reject) => {
     let data = ''
     process.stdin.setEncoding('utf-8')
